@@ -1,0 +1,228 @@
+.profile-photo {
+  position: absolute;
+  z-index: 3;
+  top: 65px;
+  right: 0;
+  width: 98px;
+  height: 98px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 2px solid rgba(185, 169, 255, .72);
+  border-radius: 50%;
+  background: linear-gradient(145deg, #1c2742, #12192c);
+  box-shadow: 0 12px 35px #05081588, 0 0 30px rgba(167, 139, 250, .18);
+}
+
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 28%;
+}
+
+.profile-photo-placeholder {
+  display: grid;
+  justify-items: center;
+  gap: 5px;
+  color: #aab5d4;
+  font-size: 9px;
+}
+
+.profile-photo-placeholder svg {
+  color: #b7a4ff;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.photo-manager {
+  width: min(680px, calc(100% - 36px));
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 36px 0;
+}
+
+.photo-manager-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #aeb9d6;
+  font-size: 12px;
+}
+
+.photo-manager-back:hover {
+  color: var(--cyan);
+}
+
+.photo-manager-panel {
+  margin-top: 52px;
+  padding: 38px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(24, 33, 58, .82), rgba(14, 20, 37, .88));
+}
+
+.photo-manager-panel h1 {
+  margin: 14px 0 10px;
+  font-size: clamp(27px, 5vw, 38px);
+  letter-spacing: -1.5px;
+}
+
+.photo-manager-intro {
+  max-width: 480px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.photo-manager-form {
+  display: grid;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.photo-manager-form > label:first-child {
+  color: #e8ebfa;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.photo-manager-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 13px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: #9ba6c4;
+  background: rgba(5, 9, 20, .35);
+}
+
+.photo-manager-input:focus-within {
+  border-color: rgba(103, 232, 249, .65);
+}
+
+.photo-manager-input input {
+  width: 100%;
+  min-height: 44px;
+  border: 0;
+  outline: 0;
+  color: #eef1ff;
+  background: transparent;
+  font: inherit;
+}
+
+.photo-manager-form .button {
+  justify-self: start;
+  border: 0;
+  cursor: pointer;
+}
+
+.photo-manager-form .button:disabled {
+  cursor: not-allowed;
+  opacity: .55;
+}
+
+.photo-file-picker {
+  min-height: 155px;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 12px;
+  padding: 16px;
+  border: 1px dashed rgba(167, 139, 250, .45);
+  border-radius: 10px;
+  color: #aeb9d6;
+  background: rgba(5, 9, 20, .28);
+  cursor: pointer;
+  font-size: 11px;
+  text-align: center;
+}
+
+.photo-file-picker:hover {
+  border-color: var(--cyan);
+}
+
+.photo-file-picker > img {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 28%;
+}
+
+.photo-file-picker > svg {
+  color: #b7a4ff;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.visually-hidden:focus-visible + .photo-file-picker {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+.photo-manager-message,
+.photo-manager-error,
+.photo-manager-success {
+  margin: 22px 0 0;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.photo-manager-message,
+.photo-manager-error {
+  color: #ffb3bd;
+}
+
+.photo-manager-success {
+  color: #8be9b5;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 800px) {
+  .profile-photo {
+    top: 52px;
+  }
+}
+
+@media (max-width: 560px) {
+  .profile-photo {
+    top: 24px;
+    right: -2px;
+    width: 78px;
+    height: 78px;
+  }
+
+  .photo-manager-panel {
+    margin-top: 34px;
+    padding: 26px 20px;
+  }
+
+  .footer-links {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

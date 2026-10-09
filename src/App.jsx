@@ -1,5 +1,7 @@
 import { ArrowDownRight, ArrowUpRight, Code2, Github, Linkedin, Mail, Menu, MonitorSmartphone, Palette, Sparkles, Terminal, X } from "lucide-react";
 import React, { useState } from "react";
+import ProfilePhoto from "./ProfilePhoto.jsx";
+import ProfilePhotoManager from "./ProfilePhotoManager.jsx";
 
 const projects = [
   {
@@ -38,6 +40,10 @@ const skills = [
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = () => setMenuOpen(false);
+
+  if (window.location.pathname === "/manage-photo") {
+    return <ProfilePhotoManager />;
+  }
 
   return (
     <div className="site-shell">
@@ -84,6 +90,7 @@ export default function App() {
               <div className="card-bottom"><span className="status-dot"/> Available to learn & collaborate</div>
             </div>
             <div className="floating-badge badge-code"><Code2 size={17}/> Build. Learn. Repeat.</div>
+            <ProfilePhoto />
           </div>
           <a className="scroll-cue" href="#about"><span/> SCROLL TO EXPLORE</a>
         </section>
@@ -143,7 +150,10 @@ export default function App() {
       <footer className="footer section-wrap">
         <a className="brand" href="#home"><span className="brand-mark">K.</span><span>Kasmithan<span className="brand-dot">.</span></span></a>
         <p>Designed with curiosity · Built with React</p>
-        <a className="back-top" href="#home">Back to top ↑</a>
+        <div className="footer-links">
+          <a className="back-top" href="/manage-photo">Manage profile photo</a>
+          <a className="back-top" href="#home">Back to top ↑</a>
+        </div>
       </footer>
     </div>
   );
