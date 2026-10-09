@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import "./profile-photo.css";
 
 export default function ProfilePhoto() {
-  const [photoUrl, setPhotoUrl] = useState("/profile-photo.jpg");
+  const [photoUrl, setPhotoUrl] = useState("/profile-photo.png");
   const [failed, setFailed] = useState(false);
 
   useEffect(() => {
@@ -17,13 +17,13 @@ export default function ProfilePhoto() {
       })
       .then(({ url, uploadedAt }) => {
         if (active) {
-          setPhotoUrl(url ? `${url}?v=${Date.parse(uploadedAt) || Date.now()}` : "/profile-photo.jpg");
+          setPhotoUrl(url ? `${url}?v=${Date.parse(uploadedAt) || Date.now()}` : "/profile-photo.png");
           setFailed(false);
         }
       })
       .catch(() => {
         if (active) {
-          setPhotoUrl("/profile-photo.jpg");
+          setPhotoUrl("/profile-photo.png");
           setFailed(false);
         }
       });
@@ -43,7 +43,7 @@ export default function ProfilePhoto() {
           src={photoUrl}
           alt="Kasmithan"
           onError={() => {
-            if (photoUrl !== "/profile-photo.jpg") setPhotoUrl("/profile-photo.jpg");
+            if (photoUrl !== "/profile-photo.png") setPhotoUrl("/profile-photo.png");
             else setFailed(true);
           }}
         />
