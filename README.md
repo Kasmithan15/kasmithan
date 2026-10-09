@@ -31,7 +31,7 @@ Update `index.html` with any preferred page title and description.
 
 ## Profile photo uploads
 The portfolio supports changing the public profile photo at `/manage-photo`.
-The current image is `public/profile-photo.jpg`.
+The current image is `public/profile-photo.png`.
 Uploads accept JPEG, PNG, and WebP images up to 4 MB. To enable uploads on
 Vercel:
 
