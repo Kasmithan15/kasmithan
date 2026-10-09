@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/manage-photo",
+      "destination": "/index.html"
+    }
+  ]
+}

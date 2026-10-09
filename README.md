@@ -29,6 +29,28 @@ Update `src/App.jsx`:
 
 Update `index.html` with any preferred page title and description.
 
+## Profile photo uploads
+The portfolio supports changing the public profile photo at `/manage-photo`.
+The current image is `public/profile-photo.jpg`.
+Uploads accept JPEG, PNG, and WebP images up to 4 MB. To enable uploads on
+Vercel:
+
+1. Open the Vercel project, select **Storage**, create a **Blob** store, and
+   connect it to the project. This adds `BLOB_READ_WRITE_TOKEN`.
+2. In **Settings → Environment Variables**, add `PROFILE_UPLOAD_PASSWORD` with
+   a strong password of at least 16 characters and `PROFILE_SESSION_SECRET`
+   with a random secret of at least 32 characters. Generate a session secret
+   locally with `openssl rand -base64 32`.
+   Keep both values private; never put them in Vite-prefixed variables or
+   commit them to Git.
+3. Redeploy the project after saving the environment variables.
+4. Open `https://kasmithan.vercel.app/manage-photo`, sign in with the upload
+   password, and choose the new image. The image is publicly readable as part
+   of the portfolio; only uploads are password-protected.
+
+The upload API runs as Vercel Functions and is not available through Vite's
+`npm run dev` server.
+
 ## Build
 ```bash
 npm run build
