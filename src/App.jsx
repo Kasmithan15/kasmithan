@@ -81,7 +81,9 @@ export default function App() {
                 <p className="indent"><span className="code-blue">focus</span>: [</p>
                 <p className="indent double"><span className="code-green">'React'</span>,</p>
                 <p className="indent double"><span className="code-green">'Frontend'</span>,</p>
-                <p className="indent double"><span className="code-green">'UI/UX'</span></p>
+                <p className="indent double"><span className="code-green">'UI/UX'</span>,</p>
+                <p className="indent double"><span className="code-green">'Backend Development'</span>,</p>
+                <p className="indent double"><span className="code-green">'Full-Stack Development'</span></p>
                 <p className="indent">],</p>
                 <p className="indent"><span className="code-blue">mindset</span>: <span className="code-green">'Always learning'</span></p>
                 <p>{"};"}</p>
